@@ -1,8 +1,9 @@
 import React from 'react';
 import dateForm from '../utils/dateFormat';
-
+import { observer } from 'mobx-react';
 import './VehicleTable.css';
 
+@observer
 class VehicleTable extends React.Component {
   render() {
     const { vehicles, onExitedVehicle } = this.props;
