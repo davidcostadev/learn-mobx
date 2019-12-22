@@ -1,13 +1,70 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.btn-group .btn + .btn {
+  margin-left: 8px;
+}
+
+.btn {
+  padding: 6px 12px;
+  outline: none;
+  border-width: 0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.btn--blue {
+  background-color: #5b5bc5;
+  color: white;
+}
+
+.btn--blue:hover,
+.btn--blue:active {
+  background-color: #28286b;
+  color: white;
+}
+
+.btn--blue:focus {
+  box-shadow: 0 0 0 2px #8282de;
+}
+
+.btn--blue[disabled] {
+  background-color: #858599;
+}
+
+.btn--red {
+  background-color: #c55b5b;
+  color: white;
+}
+
+.btn--red:hover,
+.btn--red:active {
+  background-color: #6b2828;
+  color: white;
+}
+
+.btn--red:focus {
+  box-shadow: 0 0 0 2px #ed6464;
+}
+
+.btn--red[disabled] {
+  background-color: #998585;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }

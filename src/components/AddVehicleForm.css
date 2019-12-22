@@ -1,0 +1,29 @@
+.form {
+  background: rgb(235, 235, 235);
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.form__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.field {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.field label {
+  flex-basis: 30%;
+  text-align: right;
+  margin-right: 15px;
+}
+
+.field input {
+  font-size: 16px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}

@@ -1,26 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
+import uuid from 'uuid';
+import AddVehicleForm from './components/AddVehicleForm';
+import VehicleTable from './components/VehicleTable';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class ParkingControlApp extends React.Component {
+  state = {
+    vehicles: [
+      {
+        id: uuid(),
+        createdAt: new Date(),
+        name: 'Honda Fan',
+        plate: 'ABC-1234'
+      }
+    ]
+  };
+
+  onAddVehicle = vehicle =>
+    this.setState(({ vehicles }) => ({
+      vehicles: [
+        ...vehicles,
+        {
+          ...vehicle,
+          id: uuid(),
+          createdAt: new Date()
+        }
+      ]
+    }));
+
+  onExitedVehicle = exitedVehicle =>
+    this.setState(({ vehicles }) => ({
+      vehicles: vehicles.filter(vehicle => vehicle.id !== exitedVehicle.id)
+    }));
+
+  render() {
+    return (
+      <div className='page'>
+        <div className='page__wrapper'>
+          <h1>Parking Control</h1>
+          <AddVehicleForm onAddVehicle={this.onAddVehicle} />
+          <VehicleTable vehicles={this.state.vehicles} onExitedVehicle={this.onExitedVehicle} />
+        </div>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default ParkingControlApp;
